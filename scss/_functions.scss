@@ -1,0 +1,8 @@
+//Set text color based on background
+@function appropriate-text-color-from-background($background-color) {
+  @if (lightness($background-color) > 70) {
+    @return #333;
+  } @else {
+    @return white;
+  }
+}

@@ -1,0 +1,21 @@
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+@mixin centerContent() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//Get background and appropriate text color
+@mixin bg-with-good-text-color($background-color) {
+  background-color: $background-color;
+  color: appropriate-text-color-from-background($background-color);
+}
+
+.box {
+  @include transform((rotate(0.5turn)));
+}

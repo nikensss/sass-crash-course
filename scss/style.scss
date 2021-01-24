@@ -1,0 +1,56 @@
+@import 'config';
+@import 'base';
+@import 'mixins';
+@import 'functions';
+@import 'utilities';
+@import 'buttons';
+
+.showcase {
+  @include bg-with-good-text-color($primary-color);
+  height: 600px;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        padding: 15px;
+      }
+    }
+
+    a {
+      color: appropriate-text-color-from-background($primary-color);
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &-content {
+    height: 100%;
+    margin-top: 3rem;
+    @include centerContent();
+
+    img {
+      width: 50%;
+    }
+
+    h1 {
+      font-size: 2.7rem;
+      line-height: 1.2;
+    }
+  }
+}
+
+.notes {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+@import 'mobile';
